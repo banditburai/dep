@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    padding: 16px 32px;
+  }
+  
+
+  
+  
+  body,
+  #container,
+  #upload-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for the active state of the buttons */
+  button.active {
+    background-color: #28A745;
+  }
+  
+  /* Style for the inactive state of the buttons */
+  button.inactive {
+    background-color: #6c757d;
+  }
+
+  #container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    border: 2px dashed #D1D5DB;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  #mask-output {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  #upload-button {
+    gap: 0.4rem;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  #upload {
+    display: none;
+  }
+  
+  svg {
+    pointer-events: none;
+  }
+  
+  #example {
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  #example:hover {
+    color: #2563EB;
+  }
+  
+  canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #status {
+    min-height: 16px;
+    margin: 8px 0;
+  }
+  
+  input[type="range"] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+  .custom-file-upload {
+    display: block; /* Change from inline-block to block for full width */
+    width: calc(100% - 30px); /* Adjust the width as needed, considering padding and margins */
+    margin: 10px auto; /* Center the button horizontally with auto margins */
+    padding: 12px 20px; /* Increase padding for a larger button */
+    cursor: pointer;
+    border: 1px solid #007BFF; /* Match the border color to your button color */
+    border-radius: 5px; /* Match the border-radius of your buttons */
+    background-color: #007BFF; /* Match the background color to your buttons */
+    color: white; /* Text color */
+    text-align: center; /* Center the text inside the button */
+    font-weight: bold; /* Optional: if you want the font to be bold */
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover,
+.custom-file-upload:focus {
+    background-color: #0056b3; /* Darker shade on hover, similar to your buttons */
+}
+
+/* Hide the actual file input visually, but allow it to be focused via keyboard navigation (for accessibility) */
+#upload-depth-map {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Style the label to look like a button */
+label.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+label.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px; /* adjust as needed */
+}
+
+button,
+.custom-file-upload {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center; /* ensure text is centered */
+  display: inline-block; /* allows you to specify a width */
+  width: 200px; /* you can adjust this to match your design */
+  margin: 0 5px; /* ensures buttons don't stick to each other */
+}
+
+button:hover,
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
